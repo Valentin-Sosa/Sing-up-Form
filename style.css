@@ -64,6 +64,7 @@ fieldset > div
 {
     display: flex;
     flex-direction: column;
+    height: 14vh;
     width: 15vw;
     max-width: 250px;
     gap: 0.5vh;
@@ -89,25 +90,43 @@ button:hover
 
 input
 {
+    outline: 0;
     height: 4.5vh;
     border: #fff solid 1px;
     border-radius: 5px;
     padding-left: 0.5vw;
 }
 
-input:invalid
+input:focus
+{
+    border-width: 2px;
+}
+
+.error 
+{
+    width: 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    box-sizing: border-box;
+}
+
+.error.active 
+{
+    padding: 0.3em;
+}
+
+.invalid
 {
     border: #d21917 solid 2px;
 }
 
-input:invalid + span::after
-{
-    content: "*This field is Required";
-    color: #d21917;
-    font-size: 0.9rem;
-}
 
-input:valid
+.valid
 {
     border: #008b13 solid 2px;
 }
